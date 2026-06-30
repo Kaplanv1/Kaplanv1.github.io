@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Emirhan Kaplan - Game Developer Portfolio</title>
+  <title>Emirhan Kaplan - Gameplay Programmer & Unreal Engine Developer</title>
   <meta content="Emirhan Kaplan - Gameplay Programmer & Unreal Engine Developer. Specialized in C++, Blueprint, and gameplay systems development." name="description">
   <meta content="Gameplay Programmer, Unreal Engine Developer, C++, Blueprint, Game Development, Unreal Engine 5" name="keywords">
 
@@ -22,6 +22,113 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Lite YouTube Embed - Click to load */
+    .lite-yt {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 250px;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: #000;
+      background-size: cover;
+      background-position: center;
+    }
+    .lite-yt::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 50%, rgba(0,0,0,0.6) 100%);
+      z-index: 1;
+      transition: opacity 0.3s;
+    }
+    .lite-yt:hover::before {
+      opacity: 0.7;
+    }
+    .lite-yt .lite-yt-title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 2;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+    .lite-yt .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 68px;
+      height: 48px;
+      background: rgba(255,0,0,0.85);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .lite-yt:hover .play-btn {
+      background: #f00;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .lite-yt .play-btn::after {
+      content: '';
+      border-style: solid;
+      border-width: 11px 0 11px 19px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .lite-yt.activated {
+      cursor: default;
+    }
+    .lite-yt.activated::before,
+    .lite-yt.activated .play-btn,
+    .lite-yt.activated .lite-yt-title {
+      display: none;
+    }
+
+    /* Featured project badge */
+    .featured-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+      background: linear-gradient(135deg, #ff4d4d 0%, #f9cb28 100%);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(255,77,77,0.5);
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    @keyframes pulse-badge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Featured card styles */
+    .portfolio-item.featured .portfolio-content {
+      box-shadow: 0 6px 25px rgba(20, 157, 221, 0.35);
+      border: 2px solid #149ddd;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    .portfolio-item.featured .portfolio-content:hover {
+      box-shadow: 0 8px 35px rgba(20, 157, 221, 0.5);
+      transform: translateY(-4px);
+    }
+    .portfolio-item.featured .lite-yt {
+      height: 300px;
+    }
+  </style>
 
 </head>
 
@@ -47,9 +154,9 @@
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="#testimonials"><i class="bi bi-trophy navicon"></i> Awards</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
@@ -67,341 +174,215 @@
       </div>
     </section>
 
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Gameplay Programmer and Unreal Engine Developer with 3+ years of professional experience. Specialized in C++ gameplay systems, Blueprint development, and creating engaging player experiences. Currently working at ADIM Tech and developing Project ILUNIA with TigerOne Studios. Passionate about game mechanics, optimization, and bringing creative ideas to life through code.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Gameplay Programmer & Unreal Engine Developer</h2>
-            <p class="fst-italic py-3">
-              Specialized in gameplay systems development, C++ programming, and Blueprint scripting. Experienced in building core game mechanics, character systems, AI behaviors, and multiplayer features. Focused on creating polished, performant gameplay experiences across PC and mobile platforms.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Portfolio:</strong> <span>https://kaplanv1.github.io/</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span>linkedin.com/in/emirhankpln</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+90 543 331 22 61</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Sakarya, Turkey</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Focus:</strong> <span>Gameplay Programming</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Languages:</strong> <span>C++, C#, Blueprints</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>emirhankpln137@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span>github.com/Kaplanv1</span></li>
-                </ul>
-              </div>
-            </div>
-            <p class="py-3">
-              Active gamer since age 6 with deep understanding of game design principles. Award winner at L'Oréal Brandstorm Competition (2nd Place) and selected participant at 9 Eylül University Game Development Program. Continuously developing prototypes exploring new mechanics and technologies with strong focus on optimization and performance.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="skills section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Core technical proficiencies in gameplay programming, C++ development, and Unreal Engine game systems</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
-          <div class="col-lg-6">
-            <ul style="list-style: none; padding-left: 0;">
-              <li style="padding: 10px 0; font-size: 16px;"><i class="bi bi-check-circle" style="color: #149ddd; margin-right: 10px;"></i> Unreal Engine 4/5</li>
-              <li style="padding: 10px 0; font-size: 16px;"><i class="bi bi-check-circle" style="color: #149ddd; margin-right: 10px;"></i> C++ Programming</li>
-              <li style="padding: 10px 0; font-size: 16px;"><i class="bi bi-check-circle" style="color: #149ddd; margin-right: 10px;"></i> Blueprint Visual Scripting</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <ul style="list-style: none; padding-left: 0;">
-              <li style="padding: 10px 0; font-size: 16px;"><i class="bi bi-check-circle" style="color: #149ddd; margin-right: 10px;"></i> Gameplay Ability System (GAS)</li>
-              <li style="padding: 10px 0; font-size: 16px;"><i class="bi bi-check-circle" style="color: #149ddd; margin-right: 10px;"></i> Gameplay Systems Development</li>
-              <li style="padding: 10px 0; font-size: 16px;"><i class="bi bi-check-circle" style="color: #149ddd; margin-right: 10px;"></i> Multiplayer & Networking</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Result-oriented Gameplay Programmer with 3+ years of experience in Unreal Engine. Specialized in GAS, Multiplayer Replication, and Mobile Optimization. Proven track record of shipping projects on Steam.</p>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Emirhan Kaplan</h4>
-              <p><em>Lead Gameplay Engineer & Unreal Engine Specialist. Passionate about solving complex engineering challenges and rapid prototyping.</em></p>
-              <ul>
-                <li>Istanbul, Turkey</li>
-                <li>+90 543 331 22 61</li>
-                <li>emirhankpln137@gmail.com</li>
-                <li><a href="https://kaplanv1.github.io/" target="_blank">Portfolio Website</a></li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>B.S. in Information Systems Engineering</h4>
-              <h5>Expected 2026</h5>
-              <p><em>Sakarya University, Turkey</em></p>
-            </div>
-
-            <h3 class="resume-title">Technical Skills</h3>
-            <div class="resume-item">
-              <h4>Core Competencies</h4>
-              <ul>
-                <li><strong>Languages:</strong> C++, Unreal Blueprints, C#</li>
-                <li><strong>Engine:</strong> Unreal Engine 5 & 4 (Source Code)</li>
-                <li><strong>Specialization:</strong> Gameplay Ability System (GAS), Multiplayer Replication, Server-Authoritative Networking, Mobile Optimization</li>
-                <li><strong>Tools:</strong> Visual Studio, Git/Perforce, RenderDoc, Unreal Insights</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            
-            <div class="resume-item">
-              <h4>Lead Gameplay Engineer</h4>
-              <h5>Aug 2025 - Present</h5>
-              <p><em>TigerOne Studios | Project ILUNIA (PC)</em></p>
-              <ul>
-                <li>Leading technical architecture for a co-op mystery puzzle game using <strong>C++</strong> and <strong>GAS</strong>.</li>
-                <li>Designing <strong>Server-Authoritative</strong> networking logic for complex puzzle state synchronization.</li>
-                <li><strong>AyazJam'25 Achievement:</strong> Led development of <em>"Tutsak"</em>, securing <strong>3rd Place</strong> by rapidly prototyping time-loop mechanics in 48 hours.</li>
-                <li><strong>DeepJam Selection:</strong> Engineered networked physics logic for <em>"MAGTWIN"</em>, a co-op puzzle prototype selected for Gamedevist DeepJam.</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Unreal Engine Developer</h4>
-              <h5>July 2024 - Nov 2025</h5>
-              <p><em>ADIM Tech | Enterprise Solutions</em></p>
-              <ul>
-                <li>Engineered a <strong>VR pharmaceutical training simulation</strong> with custom input handling.</li>
-                <li>Developed "ADIM Templates" (SaaS) using custom <strong>Editor Utility Widgets</strong> to accelerate production pipelines.</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Game Developer (Mobile)</h4>
-              <h5>Dec 2023 - Jan 2025</h5>
-              <p><em>Hesperian Studios | Holly Bell</em></p>
-              <ul>
-                <li>Optimized rendering pipeline achieving <strong>stable 60 FPS</strong> on mobile and reduced build size by <strong>40%</strong>.</li>
-                <li>Implemented a robust <strong>Binary Serialization System</strong> for saving complex game states.</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Freelance Unreal Developer</h4>
-              <h5>2022 - 2023</h5>
-              <p><em>Shipped Title: Madhouse Madness (Steam)</em></p>
-              <ul>
-                <li>Delivered high-quality cinematics and provided technical consultation on performance profiling.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  <section id="portfolio" class="portfolio section light-background">
+    <!-- ═══════════════ PORTFOLIO (First thing recruiters see) ═══════════════ -->
+    <section id="portfolio" class="portfolio section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Portfolio</h2>
-        <p>Professional projects showcasing gameplay programming expertise, C++ development, and Unreal Engine capabilities across PC and mobile platforms. Focus on gameplay mechanics, multiplayer systems, and optimized performance.</p>
+        <p>Shipped titles, award-winning prototypes, and professional projects built with C++, GAS, and Unreal Engine.</p>
       </div>
       <div class="container">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-pc">PC Games</li>
-            <li data-filter=".filter-mobile">Mobile Games</li>
-            <li data-filter=".filter-prototype">Prototype Projects</li>
-            <li data-filter=".filter-events">Events</li>
           </ul>
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pc filter-prototype">
+            <!-- ★ FEATURED: Car For Sale Together -->
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-pc featured">
+              <div class="portfolio-content h-100" style="position: relative;">
+                <span class="featured-badge">🔥 Latest</span>
+                <div class="lite-yt" data-id="3eR0lpSpaRw">
+                  <div class="lite-yt-title">Car For Sale Together</div>
+                  <div class="play-btn"></div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Car For Sale Together</h4>
+                  <p>Multiplayer Architecture & Gameplay Loops</p>
+                  <a href="project-car-for-sale.html" title="View Project Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- ★ FEATURED: Land of the Dead Trees -->
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-pc featured">
+              <div class="portfolio-content h-100" style="position: relative;">
+                <span class="featured-badge">🔥 Latest</span>
+                <div class="lite-yt" data-id="BxU0s_ycWd4">
+                  <div class="lite-yt-title">Land Of The Dead Trees</div>
+                  <div class="play-btn"></div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Land Of The Dead Trees</h4>
+                  <p>Modular Combat System in C++ with GAS</p>
+                  <a href="project-land-of-dead-trees.html" title="View Project Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-pc filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/2goX_wX7Sjc" 
-                  title="MAGTWIN Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="2goX_wX7Sjc">
+                  <div class="lite-yt-title">MAGTWIN</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>MAGTWIN (DeepJam Selection)</h4>
                   <p>Co-op Physics Puzzle Game</p>
-                  <a href="https://www.youtube.com/watch?v=2goX_wX7Sjc" title="Watch Video" target="_blank" class="details-link"><i class="bi bi-play-circle"></i></a>
                   <a href="project-magtwin.html" title="View Project Details" class="details-link"><i class="bi bi-link-45deg"></i></a>  
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pc filter-events">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-pc filter-events">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/Jc1UZt9rqLk" 
-                  title="Tutsak Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="Jc1UZt9rqLk">
+                  <div class="lite-yt-title">TUTSAK</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>TUTSAK (AyazJam Winner)</h4>
                   <p>3rd Place Winner - Time Loop Puzzle</p>
-                  <a href="https://www.youtube.com/watch?v=Jc1UZt9rqLk" title="Watch Full Video" target="_blank" class="details-link"><i class="bi bi-play-circle"></i></a>
                   <a href="project-tutsak.html" title="View Project Details" class="details-link"><i class="bi bi-link-45deg"></i></a>  
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pc">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-pc">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/3sx00snLu2A" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="3sx00snLu2A">
+                  <div class="lite-yt-title">Project ILUNIA</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Project ILUNIA</h4>
-                  <p>Click for details</p>
+                  <p>Co-op Mystery Puzzle</p>
                   <a href="project-ilunia.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pc">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-pc">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/9agpT1baS6w" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="9agpT1baS6w">
+                  <div class="lite-yt-title">ADIM Template</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>ADIM Template</h4>
-                  <p>Click for details</p>
+                  <p>Enterprise SaaS Tool</p>
                   <a href="project-adim.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-mobile">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/S3wYseSo4BU" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="S3wYseSo4BU">
+                  <div class="lite-yt-title">Holly Bell</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Holly Bell</h4>
-                  <p>Click for details</p>
+                  <p>Mobile Horror Puzzle</p>
                   <a href="project-hollybell.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-events">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/Ab5HMRR4nso" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="Ab5HMRR4nso">
+                  <div class="lite-yt-title">L'Oréal Brandstorm</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>L'Oréal Brandstorm Competition</h4>
-                  <p>Click for details</p>
+                  <p>2nd Place - Metaverse Project</p>
                   <a href="project-loreal.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prototype">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/irz0FT6CfyA" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="irz0FT6CfyA">
+                  <div class="lite-yt-title">Prototype 1</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Prototype Project 1</h4>
-                  <p>Click for details</p>
+                  <p>Gameplay Mechanics</p>
                   <a href="project-prototype-1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prototype">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/0tYaPpIiFuA" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="0tYaPpIiFuA">
+                  <div class="lite-yt-title">Prototype 2</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Prototype Project 2</h4>
-                  <p>Click for details</p>
+                  <p>Gameplay Mechanics</p>
                   <a href="project-prototype-2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prototype">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/JFN-4vr9k-Q" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="JFN-4vr9k-Q">
+                  <div class="lite-yt-title">Prototype 3</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Prototype Project 3</h4>
-                  <p>Click for details</p>
+                  <p>Gameplay Mechanics</p>
                   <a href="project-prototype-3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prototype">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/eBG2Y5BoEfI" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="eBG2Y5BoEfI">
+                  <div class="lite-yt-title">Prototype 4</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Prototype Project 4</h4>
-                  <p>Click for details</p>
+                  <p>Gameplay Mechanics</p>
                   <a href="project-prototype-4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prototype">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/ESzmMUERppo" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="ESzmMUERppo">
+                  <div class="lite-yt-title">Prototype 5</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Prototype Project 5</h4>
-                  <p>Click for details</p>
+                  <p>Gameplay Mechanics</p>
                   <a href="project-prototype-5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prototype">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-prototype">
               <div class="portfolio-content h-100">
-                <iframe class="img-fluid" loading="lazy" style="width: 100%; height: 250px; border-radius: 5px;" 
-                  src="https://www.youtube.com/embed/ePYhBY4J570" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                <div class="lite-yt" data-id="ePYhBY4J570">
+                  <div class="lite-yt-title">Prototype 6</div>
+                  <div class="play-btn"></div>
+                </div>
                 <div class="portfolio-info">
                   <h4>Prototype Project 6</h4>
-                  <p>Click for details</p>
+                  <p>Gameplay Mechanics</p>
                   <a href="project-prototype-6.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -412,6 +393,155 @@
       </div>
     </section>
 
+    <!-- ═══════════════ ABOUT (Compact & Impactful) ═══════════════ -->
+    <section id="about" class="about section light-background">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="Emirhan Kaplan" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); border: 3px solid rgba(20, 157, 221, 0.3);">
+          </div>
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+            <h2 style="font-size: 28px; margin-bottom: 6px;">Emirhan Kaplan</h2>
+            <p style="color: var(--accent-color); font-size: 16px; font-weight: 600; margin-bottom: 20px;">Gameplay Programmer — Unreal Engine Developer</p>
+            <p style="font-size: 15px; line-height: 1.8; margin-bottom: 24px;">
+              3+ years shipping games with C++/Blueprint on Unreal Engine. Currently at <strong>Red Core Interactive</strong> engineering multiplayer systems for Steam titles, and leading technical architecture at <strong>TigerOne Studios</strong>. Specialized in GAS, Server-Authoritative Networking, and Performance Optimization.
+            </p>
+
+            <!-- Impact Metrics -->
+            <div class="row g-3" style="margin-bottom: 20px;">
+              <div class="col-4">
+                <div style="text-align: center; padding: 18px 10px; background: var(--surface-color); border-radius: 10px; border: 1px solid rgba(20,157,221,0.2);">
+                  <div style="font-size: 28px; font-weight: 800; color: var(--accent-color); line-height: 1;">3+</div>
+                  <div style="font-size: 12px; color: var(--default-color); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Years Exp.</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div style="text-align: center; padding: 18px 10px; background: var(--surface-color); border-radius: 10px; border: 1px solid rgba(20,157,221,0.2);">
+                  <div style="font-size: 28px; font-weight: 800; color: var(--accent-color); line-height: 1;">5+</div>
+                  <div style="font-size: 12px; color: var(--default-color); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Shipped Titles</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div style="text-align: center; padding: 18px 10px; background: var(--surface-color); border-radius: 10px; border: 1px solid rgba(20,157,221,0.2);">
+                  <div style="font-size: 28px; font-weight: 800; color: var(--accent-color); line-height: 1;">3rd</div>
+                  <div style="font-size: 12px; color: var(--default-color); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">AyazJam'25</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="padding: 5px 14px; background: rgba(20,157,221,0.15); color: var(--accent-color); border-radius: 20px; font-size: 13px; font-weight: 500;">C++</span>
+              <span style="padding: 5px 14px; background: rgba(20,157,221,0.15); color: var(--accent-color); border-radius: 20px; font-size: 13px; font-weight: 500;">GAS</span>
+              <span style="padding: 5px 14px; background: rgba(20,157,221,0.15); color: var(--accent-color); border-radius: 20px; font-size: 13px; font-weight: 500;">Multiplayer</span>
+              <span style="padding: 5px 14px; background: rgba(20,157,221,0.15); color: var(--accent-color); border-radius: 20px; font-size: 13px; font-weight: 500;">UE5</span>
+              <span style="padding: 5px 14px; background: rgba(20,157,221,0.15); color: var(--accent-color); border-radius: 20px; font-size: 13px; font-weight: 500;">Blueprint</span>
+              <span style="padding: 5px 14px; background: rgba(20,157,221,0.15); color: var(--accent-color); border-radius: 20px; font-size: 13px; font-weight: 500;">VR/AR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ RESUME ═══════════════ -->
+    <section id="resume" class="resume section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Gameplay Programmer with 3+ years in Unreal Engine (C++/Blueprint), specialized in Multiplayer Replication, GAS, and Optimization.</p>
+        <div style="margin-top: 25px;">
+          <a href="resume.md" download="Emirhan_Kaplan_Resume.md" class="resume-download-btn"><i class="bi bi-download" style="margin-right: 8px;"></i>Download Resume (.md)</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Emirhan Kaplan</h4>
+              <p><em>Gameplay Programmer | Unreal Engine Developer</em></p>
+              <ul>
+                <li>Istanbul, Turkey</li>
+                <li>+90 (543) 331 22 61</li>
+                <li>emirhankpln137@gmail.com</li>
+                <li><a href="https://kaplanv1.github.io" target="_blank">kaplanv1.github.io</a></li>
+                <li><a href="https://github.com/Kaplanv1" target="_blank">github.com/Kaplanv1</a></li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>B.S. Information Systems Engineering</h4>
+              <h5>Expected 2026</h5>
+              <p><em>Sakarya University, Turkey</em></p>
+            </div>
+
+            <h3 class="resume-title">Technical Skills</h3>
+            <div class="resume-item">
+              <h4>Core Competencies</h4>
+              <ul>
+                <li><strong>Languages:</strong> C++, Unreal Blueprints, C#</li>
+                <li><strong>Engine & Tools:</strong> Unreal Engine 5/4, Visual Studio, Git/Perforce, RenderDoc, Unreal Insights</li>
+                <li><strong>Skills:</strong> GAS, Network Replication, AI Behavior Trees, Physics/Chaos, UMG, Mobile Optimization, VR/AR</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            
+            <div class="resume-item">
+              <h4>Gameplay Programmer</h4>
+              <h5>Oct 2025 - Present</h5>
+              <p><em><a href="https://store.steampowered.com/curator/45941845-Red-Core-Interactive/" target="_blank">RED CORE INTERACTIVE</a></em></p>
+              <ul>
+                <li><strong><a href="https://store.steampowered.com/app/3765640/Car_For_Sale_Together/" target="_blank">Car For Sale Together</a></strong>: Engineered multiplayer architecture and core gameplay loops for the co-op sequel. Implemented robust network replication.</li>
+                <li><strong><a href="https://store.steampowered.com/app/4362270/Land_of_the_Dead_Trees/" target="_blank">Land Of The Dead Trees</a></strong>: Sole Gameplay Programmer. Prototyped a turn-based roguelike in 3 months with modular C++ combat system using GAS.</li>
+              </ul>
+            </div>
+            
+            <div class="resume-item">
+              <h4>Lead Gameplay Engineer</h4>
+              <h5>Aug 2025 - Present</h5>
+              <p><em><a href="https://www.tigerone.studio/" target="_blank">TIGERONE STUDIOS</a></em></p>
+              <ul>
+                <li>Architected modular C++ and GAS framework for "Project ILUNIA". Designed Server-Authoritative networking for 8-player puzzle sync.</li>
+                <li>Secured <strong>3rd Place at AyazJam'25</strong> (out of 175) and a <strong>DeepJam Selection</strong> under 48h constraints.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Unreal Engine Developer</h4>
+              <h5>July 2024 - Nov 2025</h5>
+              <p><em><a href="https://adim.tech/" target="_blank">ADIM TECH</a></em></p>
+              <ul>
+                <li>Engineered VR pharmaceutical simulation with custom 3D widgets.</li>
+                <li>Built "ADIM Templates" (SaaS) using Editor Utility Widgets/Plugins.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Game Developer (Mobile)</h4>
+              <h5>Dec 2023 - Jan 2025</h5>
+              <p><em>HESPERIAN STUDIOS</em></p>
+              <ul>
+                <li>Shipped "Holly Bell" (Mobile). Achieved stable <strong>60 FPS</strong> and <strong>40%</strong> build size reduction.</li>
+              </ul>
+            </div>
+            
+            <div class="resume-item">
+              <h4>Unreal Engine Developer</h4>
+              <h5>2022 - 2023</h5>
+              <p><em>FREELANCE</em></p>
+              <ul>
+                <li><strong>Shipped:</strong> <em>Madhouse Madness: Streamer's Fate</em> (Steam).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ AWARDS ═══════════════ -->
     <section id="testimonials" class="testimonials section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Awards & Achievements</h2>
@@ -421,44 +551,36 @@
         <div class="row gy-4">
           
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="award-item" style="padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); margin-bottom: 30px; border-left: 5px solid #149ddd;">
+            <div class="award-item" style="padding: 30px; background: var(--surface-color); border-radius: 10px; box-shadow: 0px 0 30px rgba(0,0,0,0.2); margin-bottom: 30px; border-left: 5px solid #149ddd;">
               <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>AYAZJAM'25 - 3rd Place Winner</h3>
-              <h5 style="color: #666; margin-bottom: 15px; font-weight: 500;">2025 - Ankara Teknopark</h5>
-              <p style="color: #444; line-height: 1.8;">
-                Ranked <strong>3rd out of 175+ participants</strong> with the game <em>"Tutsak"</em>. Developed a complex time-loop puzzle mechanic and polished gameplay loop within a 48-hour deadline, demonstrating rapid prototyping skills and grace under pressure.
+              <h5 style="color: var(--default-color); opacity: 0.7; margin-bottom: 15px; font-weight: 500;">2025 - Ankara Teknopark</h5>
+              <p style="color: var(--default-color); line-height: 1.8;">
+                Ranked <strong>3rd out of 175+ participants</strong> with the game <em>"Tutsak"</em>. Developed a complex time-loop puzzle mechanic and polished gameplay loop within a 48-hour deadline.
               </p>
             </div>
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="award-item" style="padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); margin-bottom: 30px;">
+            <div class="award-item" style="padding: 30px; background: var(--surface-color); border-radius: 10px; box-shadow: 0px 0 30px rgba(0,0,0,0.2); margin-bottom: 30px;">
               <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>L'Oréal Brandstorm Competition - 2nd Place Winner</h3>
-              <h5 style="color: #666; margin-bottom: 15px; font-weight: 500;">2024</h5>
-              <p style="color: #444; line-height: 1.8;">Developed Unreal Engine Metaverse project for L'Oréal's global innovation competition. Led 3-month intensive development cycle with innovative interactive experiences. Competed against international teams and secured 2nd place recognition.</p>
+              <h5 style="color: var(--default-color); opacity: 0.7; margin-bottom: 15px; font-weight: 500;">2024</h5>
+              <p style="color: var(--default-color); line-height: 1.8;">Developed Unreal Engine Metaverse project for L'Oréal's global innovation competition. Secured 2nd place against international teams.</p>
             </div>
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-            <div class="award-item" style="padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); margin-bottom: 30px;">
-              <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>9 Eylül University Game Development & Pre-Incubation Program</h3>
-              <h5 style="color: #666; margin-bottom: 15px; font-weight: 500;">Selected Participant - 2024</h5>
-              <p style="color: #444; line-height: 1.8;">Selected with Holly Bell project for prestigious game development pre-incubation program. Received professional mentorship, industry training, and valuable networking opportunities with game development professionals.</p>
+            <div class="award-item" style="padding: 30px; background: var(--surface-color); border-radius: 10px; box-shadow: 0px 0 30px rgba(0,0,0,0.2); margin-bottom: 30px;">
+              <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>9 Eylül University Game Development & Pre-Incubation</h3>
+              <h5 style="color: var(--default-color); opacity: 0.7; margin-bottom: 15px; font-weight: 500;">Selected - 2024</h5>
+              <p style="color: var(--default-color); line-height: 1.8;">Selected with Holly Bell project for prestigious game development pre-incubation program.</p>
             </div>
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-            <div class="award-item" style="padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); margin-bottom: 30px;">
-              <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>Mobidictum Gaming Fair - Industry Recognition</h3>
-              <h5 style="color: #666; margin-bottom: 15px; font-weight: 500;">2025</h5>
-              <p style="color: #444; line-height: 1.8;">Successfully presented Project ILUNIA to investors and publishers at major gaming industry fair. Showcased co-op mystery puzzle game and received positive feedback from industry professionals and potential partners.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="400">
-            <div class="award-item" style="padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); margin-bottom: 30px;">
-              <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>Multiple Game Development Competition Awards</h3>
-              <h5 style="color: #666; margin-bottom: 15px; font-weight: 500;">2023 - 2024</h5>
-              <p style="color: #444; line-height: 1.8;">Achieved recognition and awards in various game development competitions with Holly Bell project. Demonstrated excellence in mobile game development, puzzle design, and horror game mechanics.</p>
+            <div class="award-item" style="padding: 30px; background: var(--surface-color); border-radius: 10px; box-shadow: 0px 0 30px rgba(0,0,0,0.2); margin-bottom: 30px;">
+              <h3 style="color: #149ddd; margin-bottom: 10px;"><i class="bi bi-trophy-fill" style="margin-right: 10px;"></i>Mobidictum Gaming Fair</h3>
+              <h5 style="color: var(--default-color); opacity: 0.7; margin-bottom: 15px; font-weight: 500;">2025</h5>
+              <p style="color: var(--default-color); line-height: 1.8;">Presented Project ILUNIA to investors and publishers. Received positive feedback from industry professionals.</p>
             </div>
           </div>
 
@@ -472,8 +594,8 @@
         <p>Let's discuss your game development project or collaboration opportunities</p>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-5">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-8">
             <div class="info-wrap">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
@@ -496,44 +618,7 @@
                   <p>emirhankpln137@gmail.com</p>
                 </div>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-          </div>
-
-       <div class="col-lg-7">
-            <form action="https://formspree.io/f/maqwdgov" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
           </div>
         </div>
       </div>
@@ -541,7 +626,7 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer position-relative dark-background">
     <div class="container">
       <div class="copyright text-center ">
         <p>© 2025 <strong class="px-1 sitename">Emirhan Kaplan</strong> | All Rights Reserved</p>
@@ -567,6 +652,34 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <script src="assets/js/main.js"></script>
+
+  <!-- Lite YouTube Embed: load thumbnails, create iframe only on click -->
+  <script>
+    (function() {
+      // Set YouTube thumbnail as background
+      document.querySelectorAll('.lite-yt').forEach(function(el) {
+        var videoId = el.getAttribute('data-id');
+        // Use hqdefault for fast load (smaller than maxresdefault)
+        el.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg)';
+        
+        el.addEventListener('click', function() {
+          if (el.classList.contains('activated')) return;
+          var iframe = document.createElement('iframe');
+          iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1');
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.position = 'absolute';
+          iframe.style.inset = '0';
+          iframe.style.borderRadius = '5px';
+          el.appendChild(iframe);
+          el.classList.add('activated');
+        });
+      });
+    })();
+  </script>
 
 </body>
 
